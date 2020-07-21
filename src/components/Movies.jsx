@@ -65,7 +65,7 @@ class Movies extends Component {
       this.state.pageSize
     );
     return (
-      <main className=" ">
+      <main className="container">
         <div className="row">
           <div className="col-3">
             <GenreList

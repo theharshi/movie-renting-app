@@ -11,8 +11,8 @@ class GenreList extends Component {
             style={{ cursor: "pointer" }}
             className={
               this.props.selectedItem.name === genre.name
-                ? "list-group-item active border border-success rounded"
-                : "list-group-item border border-success rounded"
+                ? "list-group-item active border border rounded"
+                : "list-group-item border border rounded"
             }
           >
             {genre.name}

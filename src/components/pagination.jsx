@@ -19,9 +19,7 @@ class Pagination extends Component {
             <li
               key={page}
               className={
-                currentPage === page
-                  ? "page-item active"
-                  : "page-item" + " border border-success"
+                currentPage === page ? "page-item active" : "page-item"
               }
             >
               <a onClick={() => handlePageCick(page)} className="page-link">
