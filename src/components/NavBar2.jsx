@@ -29,6 +29,11 @@ class NavBar extends Component {
                 Login
               </Link>
             </li>
+            <li class="nav-item">
+              <Link to="/register" class="nav-link">
+                Register
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
