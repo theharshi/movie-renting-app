@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
 import Input from "./input";
+import Select from "./select";
+// import { getGenre } from "../services/fakeGenreService";
+
 class Form extends Component {
   state = {
     data: {},
@@ -49,6 +52,50 @@ class Form extends Component {
     data[input.name] = input.value;
     this.setState({ data, errors });
   };
+
+  renderSelect(name, label, options) {
+    const { data, errors } = this.state;
+
+    return (
+      <Select
+        name={name}
+        value={data[name]}
+        label={label}
+        options={options}
+        onChange={this.handleChange}
+        error={errors[name]}
+      />
+    );
+  }
+
+  // renderSelect = (name, label, options, type = "text") => {
+  //   console.log("options", options[0]);
+  //   const { data, errors } = this.state;
+  //   return (
+  //     <div className="form-group">
+  //       <label htmlFor={name}>{label}</label>
+  //       <select
+  //         name={name}
+  //         id={name}
+  //         onChange={this.handleChange}
+  //         type={type}
+  //         value={data[name]}
+  //         className="form-control"
+  //       >
+  //         <option value="" />
+  //         {options.map((option) => (
+  //           <option key={option._id} value={option._id}>
+  //             {option.name}
+  //           </option>
+  //         ))}
+  //       </select>
+  //       {errors[name] && (
+  //         <div className="alert alert-danger">{errors[name]} </div>
+  //       )}
+  //     </div>
+  //   );
+  // };
+
   renderButton(label) {
     return (
       <button
@@ -64,9 +111,9 @@ class Form extends Component {
     return (
       <Input
         onChange={this.handleChange}
-        value={this.state.data[name]}
+        value={this.state.data[name]} // because of this it is empty when we reach this form from add movue whie
         name={name}
-        label={name}
+        label={label}
         type={type}
         error={this.state.errors[name]}
       ></Input>
